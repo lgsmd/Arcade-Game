@@ -2,7 +2,7 @@
 var Enemy = function() {
     // 要应用到每个敌人的实例的变量写在这里
     // 我们已经提供了一个来帮助你实现更多
-    this.x = 50;
+    this.x = -95;
     this.y = 60;
     // 敌人的图片，用一个我们提供的工具函数来轻松的加载文件
     this.sprite = 'images/enemy-bug.png';
@@ -13,7 +13,12 @@ var Enemy = function() {
 Enemy.prototype.update = function(dt) {
     // 你应该给每一次的移动都乘以 dt 参数，以此来保证游戏在所有的电脑上
     // 都是以同样的速度运行的
-    //this.x = this.x  + 100;
+    this.x += 1;
+    if(this.x <= 505){
+        this.x += 1 * dt;
+    }else {
+        this.x = -95;
+    }
 };
 
 // 此为游戏必须的函数，用来在屏幕上画出敌人，
@@ -25,7 +30,7 @@ Enemy.prototype.render = function() {
 // 这个类需要一个 update() 函数， render() 函数和一个 handleInput()函数
 var Player = function() {
     this.x = 200;
-    this.y = 400;
+    this.y = 380;
     this.sprite = 'images/char-boy.png';
     //ctx.drawImage(this.sprite, 200, 200, this.x, this.y);
 }
