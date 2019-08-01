@@ -12,6 +12,7 @@ var Enemy = function() {
 Enemy.prototype.update = function(dt) {
     // 你应该给每一次的移动都乘以 dt 参数，以此来保证游戏在所有的电脑上
     // 都是以同样的速度运行的
+
 };
 
 // 此为游戏必须的函数，用来在屏幕上画出敌人，
@@ -22,7 +23,8 @@ Enemy.prototype.render = function() {
 // 现在实现你自己的玩家类
 // 这个类需要一个 update() 函数， render() 函数和一个 handleInput()函数
 var Player = function() {
-    this.sprite = 'char-cat-girl.png';
+    this.sprite = 'images/char-cat-girl.png';
+    //ctx.drawImage(this.sprite, 200, 200, this.x, this.y);
 }
 
 Player.prototype.update = function() {
@@ -40,7 +42,11 @@ Player.prototype.handleInput = function() {
 // 现在实例化你的所有对象
 // 把所有敌人的对象都放进一个叫 allEnemies 的数组里面
 // 把玩家对象放进一个叫 player 的变量里面
-
+let player = new Player();
+let enemyA = new Enemy();
+let enemyB = new Enemy();
+let enemyC = new Enemy();
+const allEnemies = [enemyA,enemyB,enemyC];
 
 // 这段代码监听游戏玩家的键盘点击事件并且代表将按键的关键数字送到 Player.handleInput()
 // 方法里面。你不需要再更改这段代码了。
