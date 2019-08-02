@@ -1,3 +1,17 @@
-body {
+html, body{
+    box-sizing: border-box;
+}
+body, html{
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
     text-align: center;
+}
+body {
+    background-color: cadetblue;
+}
+h1 {
+    color: #ff2f69;
+    font-size: 50px;
 }
