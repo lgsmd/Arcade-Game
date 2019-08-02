@@ -2,9 +2,9 @@
 var Enemy = function() {
     // 要应用到每个敌人的实例的变量写在这里
     // 我们已经提供了一个来帮助你实现更多
-    this.x = -Math.round(Math.random() * 1200 - 95);
+    this.x = -Math.round(Math.random() * 100) - 120;
     this.y = 60;
-    this.speed = Math.ceil(Math.random() * 7) * 100;
+    this.speed = Math.ceil(Math.random() * 2) * 100;
     // 敌人的图片，用一个我们提供的工具函数来轻松的加载文件
     this.sprite = 'images/enemy-bug.png';
     };
@@ -70,7 +70,24 @@ let enemyE = new Enemy();
 let enemyF = new Enemy();
 enemyB.y = enemyE.y = 143;
 enemyC.y = enemyF.y = 226;
-const allEnemies = [enemyA,enemyB,enemyC,enemyD,enemyE,enemyF];
+const allEnemies = [enemyA,enemyB,enemyC];
+const enemyArry = [enemyD,enemyE,enemyF];
+
+//开始游戏后3s加入另外三个enemy
+function waitCreatEnemy(){
+    return new Promise(function (resolve) {
+        window.setTimeout(function(){
+            resolve();
+        },3000)
+    })
+}
+
+function addEnemy(){
+    enemyArry.forEach(function (enemy) {
+        allEnemies.push(enemy);
+    })
+}
+waitCreatEnemy().then(addEnemy);
 
 // 这段代码监听游戏玩家的键盘点击事件并且代表将按键的关键数字送到 Player.handleInput()
 // 方法里面。你不需要再更改这段代码了。

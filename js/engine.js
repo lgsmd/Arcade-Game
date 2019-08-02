@@ -81,8 +81,8 @@ var Engine = (function(global) {
     function checkCollisions() {
         allEnemies.forEach((function (enemy) {
             //console.log(enemy.y + 12);
-            if(enemy.y - 12 === player.y && enemy.x + 10 >= player.x && player.x + 10 >= enemy.x){
-                console.log('game over');
+            if(enemy.y - 12 === player.y && enemy.x + 50 >= player.x && player.x + 10 >= enemy.x){
+                reset();
             }
         }))
     }
@@ -137,7 +137,8 @@ var Engine = (function(global) {
      * 函数调用一次。
      */
     function reset() {
-        // 空操作
+       player.x = 203;
+       player.y = 380;
     }
 
     /* 紧接着我们来加载我们知道的需要来绘制我们游戏关卡的图片。然后把 init 方法设置为回调函数。
