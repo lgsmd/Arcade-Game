@@ -5,11 +5,10 @@ var Enemy = function() {
     this.x = -Math.round(Math.random() * 1200 - 95);
     this.y = 60;
     this.speed = Math.ceil(Math.random() * 7) * 100;
-            // 敌人的图片，用一个我们提供的工具函数来轻松的加载文件
-            this.sprite = 'images/enemy-bug.png';
+    // 敌人的图片，用一个我们提供的工具函数来轻松的加载文件
+    this.sprite = 'images/enemy-bug.png';
     };
 
-// let speed = Math.ceil(Math.random() * 7) * 100;
 // 此为游戏必须的函数，用来更新敌人的位置
 // 参数: dt ，表示时间间隙
     Enemy.prototype.update = function(dt) {
@@ -31,10 +30,9 @@ Enemy.prototype.render = function() {
 // 现在实现你自己的玩家类
 // 这个类需要一个 update() 函数， render() 函数和一个 handleInput()函数
 var Player = function() {
-    this.x = 200;
+    this.x = 203;
     this.y = 380;
     this.sprite = 'images/char-boy.png';
-    //ctx.drawImage(this.sprite, 200, 200, this.x, this.y);
 }
 
 Player.prototype.update = function() {
@@ -46,12 +44,18 @@ Player.prototype.render = function() {
 };
 
 Player.prototype.handleInput = function(key) {
-    switch (key) {
-        case 'up': this.y -= 83; break;
-        case 'down' : this.y += 83; break;
-        case 'left' : this.x -= 101; break;
-        case 'right' : this.x += 101; break;
-    }
+    //if(this.y - 83 > 0 && this.y + 83 < 380 && this.x - 101 > 0 && this.x + 101 < 505){
+
+        switch (key) {
+            case 'up': this.y -= 83; break;
+            case 'down' : this.y += 83; break;
+            case 'left' : this.x -= 101; break;
+            case 'right' : this.x += 101; break;
+        }
+    console.log('x:' + this.x);
+        console.log('y:' + this.y)
+    //}
+    //ctx.clearRect(0,0, 505, 606);  //清空画布
 }
 
 // 现在实例化你的所有对象
