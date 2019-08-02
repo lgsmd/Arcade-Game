@@ -44,18 +44,16 @@ Player.prototype.render = function() {
 };
 
 Player.prototype.handleInput = function(key) {
-    //if(this.y - 83 > 0 && this.y + 83 < 380 && this.x - 101 > 0 && this.x + 101 < 505){
-
-        switch (key) {
-            case 'up': this.y -= 83; break;
-            case 'down' : this.y += 83; break;
-            case 'left' : this.x -= 101; break;
-            case 'right' : this.x += 101; break;
-        }
-    console.log('x:' + this.x);
-        console.log('y:' + this.y)
-    //}
-    //ctx.clearRect(0,0, 505, 606);  //清空画布
+    if(key === 'up' && this.y - 83 >= -35){
+        this.y -= 83;
+    }else if(key === 'down' && this.y + 83 <= 380) {
+        this.y += 83;
+    }else if(key === 'left' && this.x - 101 >= 1){
+        this.x -= 101;
+    }else if(key === 'right' && this.x + 101 <= 405){
+        this.x += 101;
+    }
+    ctx.clearRect(0,0, 505, 606);  //清空画布
 }
 
 // 现在实例化你的所有对象

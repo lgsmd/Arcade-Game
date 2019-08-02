@@ -77,11 +77,11 @@ var Engine = (function(global) {
         });
         player.update();
     }
-
+    //player于enemy碰撞后重置player位置
     function checkCollisions() {
         allEnemies.forEach((function (enemy) {
             //console.log(enemy.y + 12);
-            if(enemy.y - 12 === player.y && enemy.x + 50 >= player.x && player.x + 10 >= enemy.x){
+            if(enemy.y - 12 === player.y && enemy.x + 50 >= player.x && player.x + 30 >= enemy.x){
                 reset();
             }
         }))
