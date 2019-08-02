@@ -36,7 +36,11 @@ var Player = function() {
 }
 
 Player.prototype.update = function() {
-
+    if(this.y === -35){
+        setTimeout(function () {
+            ale();
+        },0)
+    }
 };
 
 Player.prototype.render = function() {
@@ -86,6 +90,14 @@ function addEnemy(){
     })
 }
 waitCreatEnemy().then(addEnemy);
+
+//通过游戏，弹窗
+function ale() {
+    alert("恭喜通过游戏！");
+    player.x = 203;
+    player.y = 380;
+    ctx.clearRect(0,0, 505, 606);  //清空画布
+}
 
 // 这段代码监听游戏玩家的键盘点击事件并且代表将按键的关键数字送到 Player.handleInput()
 // 方法里面。你不需要再更改这段代码了。
