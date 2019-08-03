@@ -48,14 +48,16 @@ Player.prototype.render = function() {
 };
 
 Player.prototype.handleInput = function(key) {
-    if(key === 'up' && this.y - 83 >= -35){
-        this.y -= 83;
-    }else if(key === 'down' && this.y + 83 <= 380) {
-        this.y += 83;
-    }else if(key === 'left' && this.x - 101 >= 1){
-        this.x -= 101;
-    }else if(key === 'right' && this.x + 101 <= 405){
-        this.x += 101;
+    const TILE_WIDTH = 101;
+    const TILE_HEIGHT = 83;
+    if(key === 'up' && this.y - TILE_HEIGHT >= -35){
+        this.y -= TILE_HEIGHT;
+    }else if(key === 'down' && this.y + TILE_HEIGHT <= 380) {
+        this.y += TILE_HEIGHT;
+    }else if(key === 'left' && this.x - TILE_WIDTH >= 1){
+        this.x -= TILE_WIDTH;
+    }else if(key === 'right' && this.x + TILE_WIDTH <= 405){
+        this.x += TILE_WIDTH;
     }
     ctx.clearRect(0,0, 505, 606);  //清空画布
 }
