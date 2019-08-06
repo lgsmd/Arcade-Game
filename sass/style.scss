@@ -1,0 +1,25 @@
+html, body{
+    box-sizing: border-box;
+}
+body, html{
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+body {
+    background-color: cadetblue;
+}
+h1 {
+    color: #ff2f69;
+    font-size: 50px;
+}
+//这里是做测试使用，测试gulp构建工具是否添加前缀
+h2 {
+    top: 0;
+    left: 60px;
+    width: 100px;
+    transform: translate(0, -100%);
+    filter: invert(1);
+}
