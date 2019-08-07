@@ -1,0 +1,26 @@
+html, body {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box; }
+
+body, html {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  text-align: center; }
+
+body {
+  background-color: cadetblue; }
+
+h1 {
+  color: #ff2f69;
+  font-size: 50px; }
+
+h2 {
+  top: 0;
+  left: 60px;
+  width: 100px;
+  -webkit-transform: translate(0, -100%);
+          transform: translate(0, -100%);
+  -webkit-filter: invert(1);
+          filter: invert(1); }
